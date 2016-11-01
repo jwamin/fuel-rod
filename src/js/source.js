@@ -21,7 +21,7 @@ var HelloWorld = React.createClass({
       changeColor:function(){
         console.log("clicked")
 
-        var newStyle = Object.assign({},this.state.style,{color:"orange"})
+        var newStyle = { ...this.state.style, color:"orange" }
         this.setState({
           style:newStyle
         })
