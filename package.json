@@ -1,7 +1,8 @@
 {
-  "name": "reactor",
+  "name": "fuel-rod",
   "version": "0.0.1",
-  "description": "",
+  "description": "Lightweight task runner for inserting pure react code into existing sites",
+  "repository":"https://github.com/jwamin/fuel-rod.git",
   "main": "index.js",
   "config": {
     "source_dir": "./src",
@@ -25,9 +26,9 @@
     "watch": "bash script.sh watch",
     "test": "webpack --devtool inline-source-map --module-bind js=babel?presets[]=es2015,presets[]=react,plugins[]=transform-object-rest-spread,ignore=node_modules,cacheDirectory ./src/source.js ./build/build.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["taskrunner","script","react","webpack","babel","browser-sync"],
+  "author": "Joss Manger",
+  "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.0",
