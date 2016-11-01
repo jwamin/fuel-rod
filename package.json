@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "config": {
-    "source_dir": "./src/source.js",
-    "target_dir": "./build/build.js",
+    "source_dir": "./src",
+    "source_js": "js/source.js",
+    "target_dir": "./build",
+    "target_js": "build.js",
     "babel_opts": "--module-bind js=babel?presets[]=es2015,presets[]=react,plugins[]=transform-object-rest-spread,ignore=node_modules,cacheDirectory",
     "webpack_opts": "--devtool inline-source-map",
     "presets": {
@@ -19,11 +21,8 @@
     }
   },
   "scripts": {
-    "build": "webpack $npm_package_config_webpack_opts $npm_package_config_babel_opts $npm_package_config_source_dir $npm_package_config_target_dir",
-    "build2": "$npm_package_config_presets_react | json && webpack $npm_package_config_webpack_opts --module-bind js=babel --presets $npm_package_config_presets_react --plugins npm_package_config_presets_plugins $npm_package_config_source_dir $npm_package_config_target_dir",
-    "build3":"bash script.sh build",
-    "json": "REACT=$(cat package.json | json config.presets.react) && echo $REACT",
-    "watch": "webpack watch $npm_package_config_webpack_opts $npm_package_config_babel_opts $npm_package_config_source_dir",
+    "build": "bash script.sh build",
+    "watch": "bash script.sh watch",
     "test": "webpack --devtool inline-source-map --module-bind js=babel?presets[]=es2015,presets[]=react,plugins[]=transform-object-rest-spread,ignore=node_modules,cacheDirectory ./src/source.js ./build/build.js"
   },
   "keywords": [],
@@ -36,6 +35,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
+    "browser-sync": "^2.17.5",
     "webpack": "^1.13.3"
   },
   "dependencies": {
